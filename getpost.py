@@ -22,4 +22,8 @@ import requests
 # for branch in answer:
 #     print("Name of branch is {}".format(branch["name"]))
 
-r = requests.post
+request_json = {"one": "Spain", "two": "Canada"}
+r = requests.post("http://vcm.7631.vm.duke.edu:5000/compare", json=request_json)
+
+print(r.text)
+print(r.json)
