@@ -24,6 +24,10 @@ import requests
 
 request_json = {"one": "Spain", "two": "Canada"}
 r = requests.post("http://vcm.7631.vm.duke.edu:5000/compare", json=request_json)
-
+print(r)
+print(r.status_code)
 print(r.text)
-print(r.json)
+if r.status_code == 200:
+    print(r.json)
+else:
+    print("There was an error with status code of {}".format(r.status_code)
